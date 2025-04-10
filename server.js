@@ -14,14 +14,28 @@ app.get('/', (req, res) => {
 app.get('/api', (req, res) => {
   res.json(
     {
-        "message": "Api data example",
-        "location": {
-          "name": "Location 1",
-          "LAT/LONG": "BLA/BLA"
-        },
-        "listaDeLocatii": ["Locatie 1", "Locatie 2", "Locatie 3"]
+        "message": "megalocatii",
+        "locations": [
+          {
+          "name": "uwu1",
+          "point": [44.4268, 26.1025]
+          },
+          {
+          "name": "uwu2",
+          "point": [44.4268, 26.1525]
+          },
+          {
+          "name": "uwu3",
+          "point": [44.4768, 26.1525]
+          },     
+          {
+          "name": "uwu4",
+          "point": [44.4768, 26.1025]
+          },      
+        ]
     });
 });
+
 
 const server = http.createServer(app);
 
