@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/marius.jpg', (req, res) => {
+  fs.readFile(__dirname + "/client/pages/marius.jpg", 'utf8', (err, data) => {
+      res.send(data);
+  });
+});
 app.get('/api', (req, res) => {
   res.json(
     {
