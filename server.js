@@ -1,20 +1,15 @@
 const express = require('express');
 const http = require('http');
-const fs = require('fs');
 
 const app = express();
 const PORT = 6969;
 
 app.get('/', (req, res) => {
-    fs.readFile(__dirname + "/client/pages/index.html", 'utf8', (err, data) => {
-        res.send(data);
-    });
+    res.sendFile(__dirname + "/client/pages/index.html")
 });
 
 app.get('/marius.jpg', (req, res) => {
-  fs.readFile(__dirname + "/client/pages/marius.jpg", 'utf8', (err, data) => {
-      res.send(data);
-  });
+  res.sendFile(__dirname + "/client/images/marius.jpg")
 });
 app.get('/api', (req, res) => {
   res.json(
